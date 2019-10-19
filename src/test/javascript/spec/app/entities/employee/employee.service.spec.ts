@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Employee(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 0, 0, 0, 'AAAAAAA');
+      elemDefault = new Employee(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 0, 0, 0);
     });
 
     describe('Service methods', () => {
@@ -78,8 +78,7 @@ describe('Service Tests', () => {
             hireDate: currentDate.format(DATE_TIME_FORMAT),
             salary: 1,
             commissionPct: 1,
-            age: 1,
-            parent: 'BBBBBB'
+            age: 1
           },
           elemDefault
         );
@@ -109,8 +108,7 @@ describe('Service Tests', () => {
             hireDate: currentDate.format(DATE_TIME_FORMAT),
             salary: 1,
             commissionPct: 1,
-            age: 1,
-            parent: 'BBBBBB'
+            age: 1
           },
           elemDefault
         );
