@@ -42,7 +42,8 @@ entity Employee {
 	hireDate Instant,
 	salary Long,
 	commissionPct Long,
-    age Integer
+    age Integer,
+    parent String
 }
 
 entity Job {

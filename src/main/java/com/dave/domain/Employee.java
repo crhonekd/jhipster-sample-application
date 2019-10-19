@@ -53,6 +53,9 @@ public class Employee implements Serializable {
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "parent")
+    private String parent;
+
     @ManyToOne
     @JsonIgnoreProperties("employees")
     private Department department;
@@ -177,6 +180,19 @@ public class Employee implements Serializable {
         this.age = age;
     }
 
+    public String getParent() {
+        return parent;
+    }
+
+    public Employee parent(String parent) {
+        this.parent = parent;
+        return this;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
+
     public Department getDepartment() {
         return department;
     }
@@ -257,6 +273,7 @@ public class Employee implements Serializable {
             ", salary=" + getSalary() +
             ", commissionPct=" + getCommissionPct() +
             ", age=" + getAge() +
+            ", parent='" + getParent() + "'" +
             "}";
     }
 }
