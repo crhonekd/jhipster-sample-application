@@ -39,6 +39,9 @@
             <column name="age" type="integer">
                 <constraints nullable="true" />
             </column>
+            <column name="parent" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="department_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -77,6 +80,7 @@
             <column name="salary" type="numeric"/>
             <column name="commission_pct" type="numeric"/>
             <column name="age" type="numeric"/>
+            <column name="parent" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

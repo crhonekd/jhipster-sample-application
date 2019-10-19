@@ -35,6 +35,7 @@ export class EmployeeUpdateComponent implements OnInit {
     salary: [],
     commissionPct: [],
     age: [],
+    parent: [],
     department: [],
     manager: []
   });
@@ -79,6 +80,7 @@ export class EmployeeUpdateComponent implements OnInit {
       salary: employee.salary,
       commissionPct: employee.commissionPct,
       age: employee.age,
+      parent: employee.parent,
       department: employee.department,
       manager: employee.manager
     });
@@ -110,6 +112,7 @@ export class EmployeeUpdateComponent implements OnInit {
       salary: this.editForm.get(['salary']).value,
       commissionPct: this.editForm.get(['commissionPct']).value,
       age: this.editForm.get(['age']).value,
+      parent: this.editForm.get(['parent']).value,
       department: this.editForm.get(['department']).value,
       manager: this.editForm.get(['manager']).value
     };
