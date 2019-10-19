@@ -33,10 +33,6 @@
         {
             "fieldName": "age",
             "fieldType": "Integer"
-        },
-        {
-            "fieldName": "parent",
-            "fieldType": "String"
         }
     ],
     "relationships": [

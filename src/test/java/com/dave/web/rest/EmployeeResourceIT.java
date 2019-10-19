@@ -59,9 +59,6 @@ public class EmployeeResourceIT {
     private static final Integer DEFAULT_AGE = 1;
     private static final Integer UPDATED_AGE = 2;
 
-    private static final String DEFAULT_PARENT = "AAAAAAAAAA";
-    private static final String UPDATED_PARENT = "BBBBBBBBBB";
-
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -111,8 +108,7 @@ public class EmployeeResourceIT {
             .hireDate(DEFAULT_HIRE_DATE)
             .salary(DEFAULT_SALARY)
             .commissionPct(DEFAULT_COMMISSION_PCT)
-            .age(DEFAULT_AGE)
-            .parent(DEFAULT_PARENT);
+            .age(DEFAULT_AGE);
         return employee;
     }
     /**
@@ -130,8 +126,7 @@ public class EmployeeResourceIT {
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
             .commissionPct(UPDATED_COMMISSION_PCT)
-            .age(UPDATED_AGE)
-            .parent(UPDATED_PARENT);
+            .age(UPDATED_AGE);
         return employee;
     }
 
@@ -163,7 +158,6 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getSalary()).isEqualTo(DEFAULT_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(DEFAULT_COMMISSION_PCT);
         assertThat(testEmployee.getAge()).isEqualTo(DEFAULT_AGE);
-        assertThat(testEmployee.getParent()).isEqualTo(DEFAULT_PARENT);
     }
 
     @Test
@@ -204,8 +198,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].hireDate").value(hasItem(DEFAULT_HIRE_DATE.toString())))
             .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
             .andExpect(jsonPath("$.[*].commissionPct").value(hasItem(DEFAULT_COMMISSION_PCT.intValue())))
-            .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE)))
-            .andExpect(jsonPath("$.[*].parent").value(hasItem(DEFAULT_PARENT)));
+            .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE)));
     }
     
     @Test
@@ -226,8 +219,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.hireDate").value(DEFAULT_HIRE_DATE.toString()))
             .andExpect(jsonPath("$.salary").value(DEFAULT_SALARY.intValue()))
             .andExpect(jsonPath("$.commissionPct").value(DEFAULT_COMMISSION_PCT.intValue()))
-            .andExpect(jsonPath("$.age").value(DEFAULT_AGE))
-            .andExpect(jsonPath("$.parent").value(DEFAULT_PARENT));
+            .andExpect(jsonPath("$.age").value(DEFAULT_AGE));
     }
 
     @Test
@@ -258,8 +250,7 @@ public class EmployeeResourceIT {
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
             .commissionPct(UPDATED_COMMISSION_PCT)
-            .age(UPDATED_AGE)
-            .parent(UPDATED_PARENT);
+            .age(UPDATED_AGE);
 
         restEmployeeMockMvc.perform(put("/api/employees")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -278,7 +269,6 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getSalary()).isEqualTo(UPDATED_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(UPDATED_COMMISSION_PCT);
         assertThat(testEmployee.getAge()).isEqualTo(UPDATED_AGE);
-        assertThat(testEmployee.getParent()).isEqualTo(UPDATED_PARENT);
     }
 
     @Test

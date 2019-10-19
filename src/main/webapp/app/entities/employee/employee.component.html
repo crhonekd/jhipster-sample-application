@@ -27,7 +27,6 @@
             <th scope="col"  jhiSortBy="salary"><span jhiTranslate="jHipsterTestApp.employee.salary">Salary</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="commissionPct"><span jhiTranslate="jHipsterTestApp.employee.commissionPct">Commission Pct</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="age"><span jhiTranslate="jHipsterTestApp.employee.age">Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th scope="col"  jhiSortBy="parent"><span jhiTranslate="jHipsterTestApp.employee.parent">Parent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="department.id"><span jhiTranslate="jHipsterTestApp.employee.department">Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"  jhiSortBy="manager.id"><span jhiTranslate="jHipsterTestApp.employee.manager">Manager</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th scope="col"></th>
@@ -44,7 +43,6 @@
                 <td>{{employee.salary}}</td>
                 <td>{{employee.commissionPct}}</td>
                 <td>{{employee.age}}</td>
-                <td>{{employee.parent}}</td>
                 <td>
                     <div *ngIf="employee.department">
                         <a [routerLink]="['/department', employee.department?.id, 'view' ]" >{{employee.department?.id}}</a>

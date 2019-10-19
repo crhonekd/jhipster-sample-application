@@ -13,7 +13,6 @@ export interface IEmployee {
   salary?: number;
   commissionPct?: number;
   age?: number;
-  parent?: string;
   department?: IDepartment;
   jobs?: IJob[];
   manager?: IEmployee;
@@ -30,7 +29,6 @@ export class Employee implements IEmployee {
     public salary?: number,
     public commissionPct?: number,
     public age?: number,
-    public parent?: string,
     public department?: IDepartment,
     public jobs?: IJob[],
     public manager?: IEmployee
